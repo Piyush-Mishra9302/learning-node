@@ -20,9 +20,26 @@ const dataSave = (req, res) => {
    res.render("insert");
 }
 
+const displayPage = async (req, res) => {
+    const student = await studentModel.find();
+    res.render("display", {stu:student});
+}
+
+const searchPage = async (req, res) => {
+    res.render("search", {stu:[]});
+}
+
+const stuSearch = async(req, res) => {
+    const {roll_no} = req.body;
+    const student = await studentModel.find({roll_no:roll_no});
+    res.render("search", {stu:student})
+}
 
 module.exports = {
     homePage,
     insertPage,
-    dataSave
+    dataSave,
+    displayPage,
+    searchPage,
+    stuSearch
 }

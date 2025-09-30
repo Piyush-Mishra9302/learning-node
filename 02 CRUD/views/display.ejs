@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: chocolate;">
+    <a href="/">Home</a>  |
+    <a href="/insert">Insert</a>  |
+    <a href="/display">Display</a>  |
+    <a href="/update">Update</a>  |
+    <a href="/search">Search</a>  |
+    <h1>Welcome to the student Display plage</h1>
+
+    <table>
+        <tr>
+            <th>Roll no</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>fees</th>
+            
+        </tr>
+        <%
+            stu.forEach ((key) => { %>
+                <tr>
+                    <td><%= key.roll_no %></td>
+                    <td><%= key.name %></td>
+                    <td><%= key.city %></td>
+                    <td><%= key.fees %></td>
+                </tr>
+        <%        
+            })
+            
+        %>
+    </table>
+
+</body>
+</html>
