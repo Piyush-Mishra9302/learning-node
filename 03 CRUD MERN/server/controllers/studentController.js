@@ -17,7 +17,13 @@ const display = async(req, res) => {
     res.send(myData);
 }
 
+const search = async(req, res) => {
+    const {rollno} = req.body;
+    const student = await studentModel.find({rollno:rollno});
+    res.send(student);
+}
 module.exports = {
     dataSave,
-    display
+    display,
+    search
 }

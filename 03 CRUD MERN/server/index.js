@@ -10,8 +10,8 @@ mongoose.connect("mongodb://localhost:27017/MERNStudent")
   .catch((err) => console.log("❌ DB Error:", err));
 
 // Middleware
-app.use(cors()); // <-- () added
-app.use(express.json()); // <-- fixed
+app.use(cors()); 
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
