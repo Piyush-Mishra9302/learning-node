@@ -12,17 +12,16 @@ const Display = () => {
         loadData();
     }, [])
 
-    const ans = myData.map((key) => {
+    const ans = myData.map((item) => {
         return(
-            <>
-                <tr>
-                    <td>{key.rollno}</td>
-                    <td>{key.name}</td>
-                    <td>{key.city}</td>
-                    <td>{key.fees}</td>
-                   
+            
+                <tr key = {item._id}>
+                    <td>{item.rollno}</td>
+                    <td>{item.name}</td>
+                    <td>{item.city}</td>
+                    <td>{item.fees}</td>   
                 </tr>
-            </>
+            
            
         )
     })

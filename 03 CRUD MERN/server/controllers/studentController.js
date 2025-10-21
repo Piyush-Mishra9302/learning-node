@@ -32,10 +32,27 @@ const updateDelete = async(req, res) => {
     const student = await studentModel.findByIdAndDelete(id);
     res.send({msg:"Data Successfully Deleted"});
 }
+const updateedit = async(req, res) => {
+    const {id} = req.params;
+    const student = await studentModel.findById(id);
+    res.send(student);
+}
+const updateeditsave = async(req, res) => {
+    const {_id, rollno, name, city, fees} = req.body;
+    const student = await studentModel.findByIdAndUpdate(_id, {
+        rollno: rollno,
+        name : name,
+        city : city,
+        fees : fees
+    })
+    res.send({msg: "Data updated syccessfully"})
+}
 module.exports = {
     dataSave,
     display,
     search,
     updateDisplay,
-    updateDelete
+    updateDelete,
+    updateedit,
+    updateeditsave
 }

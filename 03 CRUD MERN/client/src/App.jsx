@@ -6,6 +6,7 @@ import Insert from './Insert';
 import Display from './Display';
 import Search from './Search';
 import Update from './Update';
+import MyEdit from './MyEdit'
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='display' element={<Display/>} />
         <Route path='search' element={<Search/>} />
         <Route path='update' element={<Update/>} />
+        <Route path='myedit/:id' element={<MyEdit/>} />
         </Route>
       </Routes>
     </BrowserRouter>

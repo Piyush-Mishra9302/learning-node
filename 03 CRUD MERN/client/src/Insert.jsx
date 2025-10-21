@@ -13,6 +13,7 @@ const Insert = () => {
         let api = "http://localhost:8000/students/save";
         const response = await axios.post(api, input);
         console.log(response.data);
+        alert("Data Saved Successfully !!!")
     }
   return (
     <div style={{backgroundColor: "red"}}>
