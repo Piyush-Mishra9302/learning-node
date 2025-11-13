@@ -14,26 +14,26 @@ app.use(cors());
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
-// app.use((req, res,next) => {
-//   console.log("First App level middlewear");
-//   next()
-// })
+app.use((req, res,next) => {
+  console.log("First App level middlewear");
+  next()
+})
 
-// app.get("/home", (req, res) => {
-//   console.log(("Home Page"));
-//   res.send("Welcome to the homePage")
-// })
-// app.get("/insert", (req, res) => {
-//   console.log(("Insert Page"));
-//   res.send("Welcome to the homePage")
-// })
-// app.get("/display", (req, res) => {
-//   console.log(("Display Page"));
-//   res.send("Welcome to the homePage")
-// })
+app.get("/home", (req, res) => {
+  console.log(("Home Page"));
+  res.send("Welcome to the homePage")
+})
+app.get("/insert", (req, res) => {
+  console.log(("Insert Page"));
+  res.send("Welcome to the homePage")
+})
+app.get("/display", (req, res) => {
+  console.log(("Display Page"));
+  res.send("Welcome to the homePage")
+})
 
 
-app.use("/students", studentRoute);
+// app.use("/students", studentRoute);
 
 // Server start
 app.listen(8000, () => {
